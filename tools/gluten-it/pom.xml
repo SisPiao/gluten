@@ -275,6 +275,17 @@
       </properties>
     </profile>
     <profile>
+      <id>java-25</id>
+      <activation>
+        <jdk>25</jdk>
+      </activation>
+      <properties>
+        <java.version>25</java.version>
+        <spotless.version>2.44.2</spotless.version>
+        <googlejavaformat.version>1.17.0</googlejavaformat.version>
+      </properties>
+    </profile>
+    <profile>
       <id>spark-3.3</id>
       <properties>
         <spark.version>3.3.1</spark.version>

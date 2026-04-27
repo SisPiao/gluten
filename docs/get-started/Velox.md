@@ -11,7 +11,7 @@ parent: Getting-Started
 |-------|------------------------------|
 | Spark | 3.2.2, 3.3.1, 3.4.4, 3.5.5   |
 | OS    | Ubuntu20.04/22.04, Centos7/8 |
-| jdk   | openjdk8/jdk17               |
+| jdk   | openjdk8/jdk17/jdk21/jdk25   |
 | scala | 2.12                         |
 
 # Prerequisite
@@ -20,7 +20,7 @@ Currently, with static build Gluten+Velox backend supports all the Linux OSes, b
 
 Currently, the officially supported Spark versions are 3.2.2, 3.3.1, 3.4.4 and 3.5.5.
 
-We need to set up the `JAVA_HOME` env. Currently, Gluten supports **java 8** and **java 17**.
+We need to set up the `JAVA_HOME` env. Currently, Gluten supports **java 8**, **java 11**, **java 17**, **java 21** and **java 25**.
 
 **For x86_64**
 

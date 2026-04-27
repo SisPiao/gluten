@@ -1137,6 +1137,18 @@
       </properties>
     </profile>
     <profile>
+      <id>java-25</id>
+      <activation>
+        <jdk>25</jdk>
+      </activation>
+      <properties>
+        <java.version>25</java.version>
+        <caffeine.version>3.1.8</caffeine.version>
+        <spotless.version>2.44.2</spotless.version>
+        <googlejavaformat.version>1.17.0</googlejavaformat.version>
+      </properties>
+    </profile>
+    <profile>
       <id>spark-3.3</id>
       <properties>
         <sparkbundle.version>3.3</sparkbundle.version>
@@ -1279,10 +1291,10 @@
                 <configuration>
                   <rules>
                     <requireActiveProfile>
-                      <!-- Spark 4.0 requires Java 17+ -->
+                      <!-- Spark 4.0 requires Java 17+ (JDK 17/21; Spark 4.0 does not officially support JDK 25) -->
                       <profiles>java-17,java-21</profiles>
                       <all>false</all>
-                      <message>"-P spark-4.0" requires JDK 17+</message>
+                      <message>"-P spark-4.0" requires JDK 17 or 21</message>
                     </requireActiveProfile>
                   </rules>
                 </configuration>
@@ -1361,7 +1373,7 @@
                   <rules>
                     <requireActiveProfile>
                       <!-- Spark 4.1 requires Java 17+ -->
-                      <profiles>java-17,java-21</profiles>
+                      <profiles>java-17,java-21,java-25</profiles>
                       <all>false</all>
                       <message>"-P spark-4.1" requires JDK 17+</message>
                     </requireActiveProfile>

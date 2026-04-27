@@ -61,8 +61,8 @@ The below parameters can be set via `-P` for mvn.
 | spark-3.3           | Build Gluten for Spark 3.3.           | disabled       |
 | spark-3.4           | Build Gluten for Spark 3.4.           | disabled      |
 | spark-3.5           | Build Gluten for Spark 3.5.           | enabled      |
-| spark-4.0           | Build Gluten for Spark 4.0. Requires JDK 17+ and Scala 2.13. | disabled      |
-| spark-4.1           | Build Gluten for Spark 4.1. Requires JDK 17+ and Scala 2.13. | disabled      |
+| spark-4.0           | Build Gluten for Spark 4.0. Requires JDK 17+ (JDK 17/21/25 supported) and Scala 2.13. | disabled      |
+| spark-4.1           | Build Gluten for Spark 4.1. Requires JDK 17+ (JDK 17/21/25 supported) and Scala 2.13. | disabled      |
 
 ## Gluten Jar for Deployment
 The gluten jar built out is under `GLUTEN_SRC/package/target/`.
