@@ -63,6 +63,14 @@ You can change the S3 payload signing policy by setting the `spark.gluten.velox.
 ## Configuring S3 Log Location
 You can set the log location by setting the `spark.gluten.velox.s3LogLocation` configuration.
 
+## Configuring S3 Compliant RFC 3986 Encoding
+You can enable compliant RFC 3986 encoding for the AWS C++ SDK by setting the `spark.gluten.velox.s3CompliantRfc3986Encoding` configuration. The Allowed values are:
+ "false", "true".
+- When set to "true", the AWS SDK will use compliant RFC 3986 encoding for URL path and query parameters.
+- When set to "false" (default), the AWS SDK will use the legacy encoding behavior.
+
+This option is useful when working with S3-compatible services that require strict RFC 3986 compliance for URL encoding.
+
 # Local Caching support
 
 Velox supports a local cache when reading data from S3. Please refer [Velox Local Cache](VeloxLocalCache.md) part for more detailed configurations.

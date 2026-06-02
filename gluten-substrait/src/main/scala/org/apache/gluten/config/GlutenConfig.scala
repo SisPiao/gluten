@@ -490,6 +490,7 @@ object GlutenConfig extends ConfigRegistry {
     "spark.gluten.velox.s3UseProxyFromEnv",
     "spark.gluten.velox.s3PayloadSigningPolicy",
     "spark.gluten.velox.s3LogLocation",
+    "spark.gluten.velox.s3CompliantRfc3986Encoding",
     // gcs config
     SPARK_GCS_STORAGE_ROOT_URL,
     SPARK_GCS_AUTH_TYPE,
@@ -614,6 +615,7 @@ object GlutenConfig extends ConfigRegistry {
       ("spark.gluten.velox.awsSdkLogLevel", "FATAL"),
       ("spark.gluten.velox.s3UseProxyFromEnv", "false"),
       ("spark.gluten.velox.s3PayloadSigningPolicy", "Never"),
+      ("spark.gluten.velox.s3CompliantRfc3986Encoding", "false"),
       (SQLConf.SESSION_LOCAL_TIMEZONE.key, SQLConf.SESSION_LOCAL_TIMEZONE.defaultValueString)
     ).foreach { case (k, defaultValue) => nativeConfMap.put(k, conf.getOrElse(k, defaultValue)) }
 

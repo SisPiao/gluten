@@ -55,6 +55,10 @@ void getS3HiveConfig(
   // Log location of AWS C++ SDK
   const std::string kVeloxS3LogLocation = "spark.gluten.velox.s3LogLocation";
 
+  // Compliant RFC 3986 encoding for AWS C++ SDK
+  const std::string kVeloxS3CompliantRfc3986Encoding = "spark.gluten.velox.s3CompliantRfc3986Encoding";
+  const std::string kVeloxS3CompliantRfc3986EncodingDefault = "false";
+
   const std::unordered_map<S3Config::Keys, std::pair<std::string, std::optional<std::string>>> sparkSuffixes = {
       {S3Config::Keys::kAccessKey, std::make_pair("access.key", std::nullopt)},
       {S3Config::Keys::kSecretKey, std::make_pair("secret.key", std::nullopt)},
@@ -134,6 +138,8 @@ void getS3HiveConfig(
   if (logLocation.has_value()) {
     hiveConfMap[S3Config::kS3LogLocation] = logLocation.value();
   };
+  hiveConfMap[S3Config::baseConfigKey(S3Config::Keys::kCompliantRfc3986Encoding)] =
+      conf->get<std::string>(kVeloxS3CompliantRfc3986Encoding, kVeloxS3CompliantRfc3986EncodingDefault);
 
   // Convert all Spark bucket configs to Velox bucket configs.
   for (const auto& [key, value] : conf->rawConfigs()) {
